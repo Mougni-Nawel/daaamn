@@ -1,0 +1,57 @@
+<%- include("_header") -%>
+
+<h1>Liste des Plantes (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Photos</th>
+        <th>Nom de plante</th>
+        <th>Localisation</th>
+        <th>Proprietaire</th>
+        <th>Commentaires</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/create">Ajouter</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const book of model) { %>
+        <tr>
+          <td><%= book.Photos %></td>
+          <td><%= book.Nomplante %></td>
+          <td><%= book.Geolocalisation %></td>
+          <td><%= book.Proprietaire %></td>
+          <td><%= book.Commentaires %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-warning" href="/edit/<%= book.Plante_ID %>">Modifier</a>
+            <a class="btn btn-sm btn-danger" href="/delete/<%= book.Plante_ID %>">Effacer</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>
+
+
+<!--
+<% include("_header") %>
+
+<h1>Liste des livres</h1>
+
+<ul>
+
+  <% for (const book of model) { %>
+    <li>
+      <%= book.Titre %>
+      <em>(<%= book.Auteur %>)</em>
+    </li>
+  <% } %>
+
+</ul>
+
+<% include("_footer") %>
+-->
