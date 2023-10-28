@@ -1,14 +1,12 @@
 <%- include("_header") -%>
 
-<h1>Liste des Plantes (<%= model.length %>)</h1>
+<h1>Liste des Devoirs (<%= model.length %>)</h1>
 
 <div class="table-responsive-sm">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Photos</th>
-        <th>Nom de plante</th>
-        <th>Localisation</th>
+        <th>Document</th>
         <th>Proprietaire</th>
         <th>Commentaires</th>
       </tr>
@@ -17,8 +15,6 @@
       <% for (const book of model) { %>
         <tr>
           <td><%= book.Photos %></td>
-          <td><%= book.Nomplante %></td>
-          <td><%= book.Geolocalisation %></td>
           <td><%= book.Proprietaire %></td>
           <td><%= book.Commentaires %></td>
           <td class="d-print-none">
